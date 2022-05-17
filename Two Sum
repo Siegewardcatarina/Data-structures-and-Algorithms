@@ -1,0 +1,33 @@
+// The following is the solution for Two sum (Leetcode 1)
+
+/*
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+*/
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) 
+    {
+        vector<int> ret;
+        int size,diff;
+        size=nums.size();
+        unordered_map<int,int> m;
+        for(int i =0; i<size; i++)
+        {
+            diff=target-nums[i];
+            if(m.find(diff)!=m.end() and m.find(diff)->second!=i)
+            {
+                ret.push_back(i);
+                ret.push_back(m.find(diff)->second);
+                return ret;
+            }
+            m[nums[i]]=i;
+        }
+        return ret;
+    }
+};
+    
