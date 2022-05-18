@@ -1,0 +1,5 @@
+// This file contains solution for Maximum Subarray (leetcode 53)
+
+/*
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+*/
