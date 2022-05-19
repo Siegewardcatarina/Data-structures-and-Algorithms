@@ -1,0 +1,29 @@
+//This file contains the solution of Longest Substring Without Repeating Characters (Leetcode 3)
+
+//Code:
+/*
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) 
+    {
+        unordered_set<char> set;
+        int i=0,j=0;
+        int ans=0;
+        while(i<s.size() and j<s.size())
+        {
+            if(set.find(s[j])==set.end())
+            {
+                set.insert(s[j]);
+                j++;
+                ans=max(ans,j-i);
+            }
+            else
+            {
+                set.erase(s[i]);
+                i++;              
+            }   
+        }
+        return ans;
+    }
+};
+*/
