@@ -1,6 +1,7 @@
 //This file contains the solution of Longest Substring Without Repeating Characters (Leetcode 3)
 
-//Code:
+// Given a string s, find the length of the longest substring without repeating characters.
+
 /*
 class Solution {
 public:
