@@ -1,0 +1,21 @@
+This file contains the solution of Q no 704 of leetcode Binary Search
+
+//Code:
+
+class Solution {
+public:
+    int search(vector<int>& nums, int target) 
+    {
+        int low=0,right=nums.size()-1;
+        int mid = (right+left)/2;
+        while(left<=right)
+        {
+            if(target==nums[mid]) return mid;
+            else if(target <= nums[mid]) right=mid-1;
+            else left=mid+1;
+        }
+        return -1;
+    }
+};
+
+A link which i found helpful to understand:- https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html
