@@ -1,0 +1,55 @@
+This filr e contains solution of leetcode Q.73 Minimum window substring
+
+/*
+Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+
+The testcases will be generated such that the answer is unique.
+
+A substring is a contiguous sequence of characters within the string.
+*/
+
+//Code:
+class Solution {
+public:
+    string minWindow(string s, string t) 
+    {
+        unordered_map<char,int> m;
+        for(int i=0; i<t.size(); i++)
+        {
+            m[t[i]]++;
+        }
+        int counter=t.size();
+        int left=0, right=0;
+        int minlen=INT_MAX, minstart=0;
+        
+        while(right<s.size())
+        {
+            if(m[s[right]]>0)
+            {
+                counter--;
+            }
+            m[s[right]]--;
+            right++;
+            
+            while(counter==0)
+            {
+                if(right-left<minlen)
+                {
+                    minstart=left;
+                    minlen=right-left;
+                }
+                m[s[left]]++;
+                if(m[s[left]]>0)
+                {
+                    counter++;
+                }
+                left++;
+            }
+        }
+        if(minlen!=INT_MAX)
+        {
+            return s.substr(minstart,minlen);
+        }
+        return "";
+    }
+};
