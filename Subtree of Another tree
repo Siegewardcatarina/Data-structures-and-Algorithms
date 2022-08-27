@@ -1,0 +1,37 @@
+This File contains the solution to leetcode Q.572 Subtree of another tree
+
+/*
+Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise.
+
+A subtree of a binary tree tree is a tree that consists of a node in tree and all of this node's descendants. The tree tree could also be considered as a subtree of itself.
+*/
+
+//Code:
+
+class Solution {
+public:
+    int height(TreeNode* root)
+    {
+        if(root == NULL)
+        {
+            return 1;
+        }
+        return 1 + max(height(root->left) , height(root->right));
+    }
+    bool isBalanced(TreeNode* root) 
+    {
+        if(root == NULL)
+        {
+            return true;
+        }
+        
+        int dl = height(root-> left);
+        int dr = height(root->right);
+        
+        if(abs(dl-dr)<=1 && isBalanced(root->left) && isBalanced(root->right))
+        {
+            return true;
+        }
+        return false;
+    }
+};
