@@ -1,0 +1,32 @@
+This file contains the solution to Leetcode Q.1448 Count the good nodes in binary tree
+
+/*
+Given a binary tree root, a node X in the tree is named good if in the path from root to X there are no nodes with a value greater than X.
+
+Return the number of good nodes in the binary tree.
+*/
+
+//Code:
+
+int goodNodes(TreeNode* root) 
+    {
+        int result=0;
+        dfs(root,root->val,result);
+        return result;
+    }
+    
+    void dfs(TreeNode* root, int maxi, int& result)
+    {
+        if(root==NULL)
+        {
+            return;
+        }
+        if(root->val >= maxi)
+        {
+            result++;
+        }
+        
+        dfs(root->left, max(root->val,maxi), result);
+        dfs(root->right, max(root->val,maxi), result);
+    }
+};
