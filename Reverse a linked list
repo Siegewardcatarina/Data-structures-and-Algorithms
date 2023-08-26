@@ -23,10 +23,9 @@ public:
         curr->next=prev;
         prev=curr;
         curr=temp;
-      }
-      
-      return head;
+      }      
+      return prev;
     }
-}
+};
 
 //Code:
