@@ -32,4 +32,24 @@ public:
     }
 };
 
-//Code:                                                                                          OPTIMIZED
+//Code:                                                                                          [SAME]
+
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) 
+    {
+        unordered_map <string,vector<string>> m;
+        for(auto i:strs)
+        {
+            string word = i;
+            sort(word.begin(),word.end());
+            m[word].push_back(i);
+        }
+        vector<vector<string>> res;
+        for(auto i:m)
+        {
+            res.push_back(i.second);
+        }
+        return res;
+    }
+};
