@@ -1,0 +1,29 @@
+Q.9 Palindrome number
+
+/*
+Given an integer x, return true if x is a palindrome, and false otherwise.
+*/
+
+//Code:
+class Solution {
+public:
+    bool isPalindrome(int x) 
+    {
+      if(x<0) return false;
+      long long
+      a = x;
+      long long digit=0;
+
+      while(a!=0)
+      {
+        digit = digit*10;
+        digit = digit + (a%10);
+        a = a/10;        
+      }
+      if(digit==x)
+      {
+        return true;
+      }
+      return false;
+    }
+};
