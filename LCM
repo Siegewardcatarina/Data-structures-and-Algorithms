@@ -1,0 +1,35 @@
+This file contains the solution to LCM of two numbers
+
+//Code:
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int lcm(int a, int b)
+{
+    int n = max(a,b);
+    int i = n;
+    int res=0;
+    while(!res)
+    {
+        if((i%a == 0) && (i%b == 0))
+        {
+            res = i;
+        }
+        i++;
+    }
+    return res;
+}
+
+int main()
+{
+    int a,b;
+    cout<< "Enter a : ";
+    cin>>a;
+    cout<<"Enter b : ";
+    cin>>b;
+    int result = lcm(a,b);
+    cout<<result;
+    return 0;
+}
