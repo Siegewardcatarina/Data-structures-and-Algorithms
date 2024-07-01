@@ -8,6 +8,21 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order.
 */
 
+
+//Python:
+//Brute O(N^2)
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+       for i in range(len(nums)-1):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j] == target:
+                    return([i,j])
+
+//Optimized
+
+
+
+//C++
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
