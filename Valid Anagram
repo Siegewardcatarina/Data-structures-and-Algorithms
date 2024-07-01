@@ -8,6 +8,25 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 
 //Code:
 
+//Python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        maps,mapt={},{}
+
+        if len(s)!=len(t):
+            return False
+        
+        for i in range(len(s)):
+            maps[s[i]] = 1 + maps.get(s[i],0)
+            mapt[t[i]] = 1 + mapt.get(t[i],0)
+        
+        if maps == mapt:
+            return True
+
+        return False
+
+
+//C++
 class Solution {
 public:
     bool isAnagram(string s, string t) {
