@@ -19,7 +19,14 @@ class Solution:
                     return([i,j])
 
 //Optimized
-
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+       map={}
+       for i in range(len(nums)):
+        left = target - nums[i]
+        if left in map:
+            return([map[left],i])
+        map[nums[i]]=i
 
 
 //C++
