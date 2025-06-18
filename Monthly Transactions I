@@ -1,0 +1,17 @@
+/*
+Write an SQL query to find for each month and country, the number of transactions and their total amount, the number of approved transactions and their total amount.
+
+Return the result table in any order.
+*/
+
+//Code:
+select 
+-- concat(year(trans_date),'-',month(trans_date) as month
+-- substring(cast(trans_date as char),1,7) as month
+left(trans_Date,7) as month
+, country, count(*) as trans_count
+, sum(state='approved') as approved_count
+, sum(amount) as trans_total_amount
+, sum((state='approved')*amount) as approved_total_amount
+from transactions
+group by month,country
