@@ -7,12 +7,14 @@ Given an integer array nums, return true if any value appears at least twice in 
 //Python
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        map=set()
-        for i in nums:
-            if i in map:
+        hash = {}
+        for num in nums:
+            if num in hash:
                 return True
-            map.add(i)
+            hash[num] = 1
+                
         return False
+        
 
 //C++
 //Code:
